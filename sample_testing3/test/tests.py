@@ -16,6 +16,7 @@ class TestCelebrity(unittest.TestCase):
         from src.celebrity import Celebrity        
         self.celeb=Celebrity(movielist=["Aviator","Ball"],name=name, age=ager, gender='Male')
 
+
     @patch('person.Consumer')
     def test_person(self, mock_consumer):
         try:
