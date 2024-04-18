@@ -33,7 +33,7 @@ class TestCelebrity(unittest.TestCase):
             ager = 35
             
             from src.programmer import Programmer        
-            self.celeb=Programmer(movielist=["Aviator","Ball"],name=name, age=ager, gender='FeMale')
+            self.celeb=Programmer(movielist=["Aviator","Ball"],name=name, age=ager, gender='FeMale', deposit=1000)
             print(self.celeb)
             assert self.celeb.name == "Karthika"
             assert self.celeb.age == 35
@@ -44,6 +44,7 @@ class TestCelebrity(unittest.TestCase):
             mock_ssl_create_default_context.assert_called_once()
             mock_ssl_create_default_context.assert_called_once_with(cafile="ca_certificate.pem")
             mock_connection_parameters.assert_called_once()
+            assert self.celeb.investment_decade() == 2000.0
 
             print("Consumer:",mock_consumer)
             print("Consumer return:",mock_consumer.return_value)
