@@ -1,6 +1,7 @@
 from socialMedia import SocialMedia
 from confluent_kafka import Consumer
-
+import pika
+import ssl
 import threading
 
 class Person(threading.Thread):
@@ -16,5 +17,10 @@ class Person(threading.Thread):
             'auto.offset.reset': 'earliest'
             })
         self.consumer.subscribe(['mytopic'])
+        self.context = ssl.create_default_context(cafile="ca_certificate.pem")
+        self.ssl_options = pika.SSLOptions(self.context, "localhost")
+        self.conn_params = pika.ConnectionParameters(port=5671,
+                                        ssl_options=self.ssl_options)
+
     def __str__(self):
         return f"{self.name} is {self.age} years old and is a {self.gender}"
