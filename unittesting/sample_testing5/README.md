@@ -15,12 +15,13 @@ This project demonstrates a simple Python application with a focus on testing pr
 - Install the required Python packages: ```pip3 install -r requirements.txt```
 
 ## Project Structure
-
+```
 learning-L5/
 ├── src/
 │   └── converter.py
 └── tests/
     └── test_converter.py
+```
 
 ### Adding `__init__.py`
 To make Python treat directories containing the file as packages, add an empty `__init__.py` file to both the `src` and `tests` directories.
