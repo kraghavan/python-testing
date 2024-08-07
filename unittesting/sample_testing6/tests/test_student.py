@@ -7,6 +7,27 @@ class TestStudent(unittest.TestCase):
     @given(
         name=st.text(),
         age=st.integers(min_value=18, max_value=100),
+        grades=st.dictionaries(keys=st.text(min_size=1), values=st.floats(min_value=0, max_value=100), min_size=1)
+    )
+    def test_student_initialization(self, name, age, grades):
+        student = Student(name, age, grades)
+        self.assertEqual(student.name, name)
+        self.assertEqual(student.age, age)
+        self.assertEqual(student.grades, grades)
+
+    @given(
+        name=st.text(),
+        age=st.integers(),
+        grades=st.dictionaries(keys=st.text(), values=st.floats(min_value=0, max_value=100))
+    )
+    def test_get_grade(self, name, age, grades):
+        student = Student(name, age, grades)
+        for subject, grade in grades.items():
+            self.assertEqual(student.get_grade(subject), grade)
+        self.assertEqual(student.get_grade("Nonexistent Subject"), "Subject not found")
+    @given(
+        name=st.text(),
+        age=st.integers(min_value=18, max_value=100),
         # Ensure at least one grade by setting min_size=1
         grades=st.dictionaries(keys=st.text(min_size=1), values=st.floats(min_value=0, max_value=100), min_size=1)
     )
