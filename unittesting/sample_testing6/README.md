@@ -1,4 +1,4 @@
-# Learning-L5 Project
+# Learning-L6 Project
 
 ## Introduction
 This project demonstrates a simple Python application with a focus on testing practices using `pytest` and `hypothesis`. It includes examples of unit tests and coverage reports.
