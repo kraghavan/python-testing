@@ -10,13 +10,13 @@ This project demonstrates a simple Python application with a focus on testing pr
 - hypothesis
 
 ## Installation
-- Clone the repository and navigate into the project directory: ```git clone <repository-url> cd learning-L5```
+- Clone the repository and navigate into the project directory: ```git clone <repository-url> cd learning-L6```
 
 - Install the required Python packages: ```pip3 install -r requirements.txt```
 
 ## Project Structure
 ```
-learning-L5/
+learning-L6/
 ├── src/
 │   └── __init__.py
 │   └── student.py
