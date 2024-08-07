@@ -18,8 +18,10 @@ This project demonstrates a simple Python application with a focus on testing pr
 ```
 learning-L5/
 ├── src/
+│   └── __init__.py
 │   └── converter.py
 └── tests/
+│   └── __init__.py
     └── test_converter.py
 ```
 
